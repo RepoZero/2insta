@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">2insta</string>
+    <string name="username_email_phonenumber">Username , Email or PhoneNumber</string>
+    <string name="password">Password</string>
+</resources>
