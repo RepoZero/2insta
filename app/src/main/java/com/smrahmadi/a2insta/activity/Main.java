@@ -1,9 +1,8 @@
-package com.smrahmadi.a2insta.activitys;
+package com.smrahmadi.a2insta.activity;
 
 import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.smrahmadi.a2insta.R;
 

@@ -1,4 +1,4 @@
-package com.smrahmadi.a2insta.objects;
+package com.smrahmadi.a2insta.object;
 
 import java.util.HashMap;
 
@@ -47,11 +47,11 @@ public class Post {
         this.content = content;
     }
 
-    public HashMap<Integer, com.smrahmadi.a2insta.objects.Like> getLike() {
+    public HashMap<Integer, com.smrahmadi.a2insta.object.Like> getLike() {
         return like;
     }
 
-    public void setLike(HashMap<Integer, com.smrahmadi.a2insta.objects.Like> like) {
+    public void setLike(HashMap<Integer, com.smrahmadi.a2insta.object.Like> like) {
         this.like = like;
     }
 

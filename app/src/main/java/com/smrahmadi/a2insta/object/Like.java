@@ -1,4 +1,4 @@
-package com.smrahmadi.a2insta.objects;
+package com.smrahmadi.a2insta.object;
 
 /**
  * Created by lincoln on 3/18/18.

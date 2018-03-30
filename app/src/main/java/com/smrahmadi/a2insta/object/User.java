@@ -1,12 +1,15 @@
-package com.smrahmadi.a2insta.objects;
+package com.smrahmadi.a2insta.object;
 
 import android.graphics.Bitmap;
 
 /**
- * Created by lincoln on 3/21/18.
+ * Created by lincoln on 3/18/18.
  */
 
-public class Person  {
+public class User {
+
+
+    private static User instance;
 
     private String userId ;
     private String name ;
@@ -16,14 +19,26 @@ public class Person  {
     private double followingCount;
     private int postCount;
 
-    public Person(String userId, String name, String bio, Bitmap profileImage, double followersCount, double followingCount, int postCount) {
-        this.userId = userId;
-        this.name = name;
-        this.bio = bio;
-        this.profileImage = profileImage;
-        this.followersCount = followersCount;
-        this.followingCount = followingCount;
-        this.postCount = postCount;
+    private User(){}
+
+    private User(String userId , String name , String bio , Bitmap profileImage ,double followersCount , double followingCount , int postCount ){
+        this.userId=userId;
+        this.name=name;
+        this.bio=bio;
+        this.profileImage=profileImage;
+        this.followersCount=followersCount;
+        this.followingCount=followingCount;
+        this.postCount=postCount;
+    }
+
+
+
+    public static synchronized User getUser()
+    {
+        if (instance == null)
+            instance = new User();
+
+        return instance;
     }
 
     public String getUserId() {
