@@ -11,7 +11,16 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:replace="android:supportsRtl">
-        <activity android:name=".activity.Main" />
+        <activity android:name=".activity.Main" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <activity android:name=".activity.Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

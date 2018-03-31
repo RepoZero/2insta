@@ -1,36 +1,62 @@
 package com.smrahmadi.a2insta.activity;
 
-import android.annotation.SuppressLint;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.smrahmadi.a2insta.R;
+import com.smrahmadi.a2insta.fragment.DirectFragment;
+import com.smrahmadi.a2insta.fragment.HomeFragment;
+import com.smrahmadi.a2insta.fragment.SearchFragment;
+import com.smrahmadi.a2insta.fragment.StoryFragment;
+import com.smrahmadi.a2insta.fragment.UserFragment;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import eu.long1.spacetablayout.SpaceTabLayout;
+
 
 public class Main extends AppCompatActivity {
+
+    @BindView(R.id.spaceTabLayout) protected SpaceTabLayout spaceTabLayout ;
+    @BindView(R.id.viewPager) protected ViewPager viewPager ;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        initView();
 
 
+        List<Fragment> fragmentList = new ArrayList<>();
+        fragmentList.add(new UserFragment());
+        fragmentList.add(new DirectFragment());
+        fragmentList.add(new SearchFragment());
+        fragmentList.add(new HomeFragment());
+        fragmentList.add(new StoryFragment());
 
-        @SuppressLint("UseSparseArrays")
-        HashMap<Integer,MyKey> hm= new HashMap<>();
-        hm.put(0,new MyKey("a","b","c"));
-        hm.put(1,new MyKey("d","e","f"));
-        hm.put(2,new MyKey("g","h","i"));
+        spaceTabLayout.initialize(viewPager, getSupportFragmentManager(), fragmentList,savedInstanceState);
+
+        spaceTabLayout.setTabFourIcon(R.drawable.home);
+        spaceTabLayout.setTabFourIcon(R.drawable.story);
 
     }
 
+    void initView(){
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
 
-    public class MyKey {
-        String subkey1; String subkey2; String subkey3;
-        MyKey(String subkey1, String subkey2, String subkey3) {
-            this.subkey1=subkey1; this.subkey2=subkey2; this.subkey3=subkey3 ;
-        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        spaceTabLayout.saveState(outState);
+        super.onSaveInstanceState(outState);
     }
 }

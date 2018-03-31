@@ -7,7 +7,7 @@ import com.smrahmadi.a2insta.view.LoginView;
 
 public class LoginModel implements LoginPresenter {
 
-    LoginView mLoginView;
+    private LoginView mLoginView;
 
     public LoginModel(LoginView mLoginView){
         this.mLoginView = mLoginView;

@@ -24,7 +24,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener,Log
     @BindView(R.id.login_btn)protected Button btnLogin;
 
 
-    private LoginPresenter mLoginPresenter ;
+    private LoginModel mLoginPresenter ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
