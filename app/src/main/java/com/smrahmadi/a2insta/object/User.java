@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 public class User {
 
 
-    private static User instance;
+
 
     private String userId ;
     private String name ;
@@ -19,9 +19,8 @@ public class User {
     private double followingCount;
     private int postCount;
 
-    private User(){}
 
-    private User(String userId , String name , String bio , Bitmap profileImage ,double followersCount , double followingCount , int postCount ){
+    public User(String userId , String name , String bio , Bitmap profileImage ,double followersCount , double followingCount , int postCount ){
         this.userId=userId;
         this.name=name;
         this.bio=bio;
@@ -33,13 +32,7 @@ public class User {
 
 
 
-    public static synchronized User getUser()
-    {
-        if (instance == null)
-            instance = new User();
 
-        return instance;
-    }
 
     public String getUserId() {
         return userId;

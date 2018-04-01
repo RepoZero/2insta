@@ -22,6 +22,11 @@ public class Post {
         this.comment=comment;
     }
 
+    public Post(String userId, String postId, HashMap<Integer, Content> content) {
+        this.userId = userId;
+        this.postId = postId;
+        this.content = content;
+    }
 
     public String getUserId() {
         return userId;

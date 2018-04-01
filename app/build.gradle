@@ -44,4 +44,7 @@ dependencies {
 
     implementation 'eu.long1:spacetablayout:1.0.4'
 
+    implementation 'com.bartoszlipinski:recyclerviewheader2:2.0.1'
+
+
 }
