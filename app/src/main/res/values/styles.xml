@@ -52,4 +52,11 @@
     </style>
 
 
+    <style name="edt" parent="android:Widget.EditText">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
 </resources>

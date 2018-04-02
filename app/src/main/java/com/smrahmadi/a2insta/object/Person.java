@@ -15,8 +15,9 @@ public class Person  {
     private double followersCount;
     private double followingCount;
     private int postCount;
+    private boolean userIsPrivate ;
 
-    public Person(String userId, String name, String bio, Bitmap profileImage, double followersCount, double followingCount, int postCount) {
+    public Person(String userId, String name, String bio, Bitmap profileImage, double followersCount, double followingCount, int postCount, boolean userIsPrivate) {
         this.userId = userId;
         this.name = name;
         this.bio = bio;
@@ -24,6 +25,16 @@ public class Person  {
         this.followersCount = followersCount;
         this.followingCount = followingCount;
         this.postCount = postCount;
+        this.userIsPrivate = userIsPrivate;
+    }
+
+
+
+    public Person(String userId, String name , Bitmap profileImage) {
+        this.userId = userId;
+        this.name = name;
+        this.profileImage=profileImage ;
+
     }
 
     public String getUserId() {
@@ -80,5 +91,13 @@ public class Person  {
 
     public void setPostCount(int postCount) {
         this.postCount = postCount;
+    }
+
+    public boolean isUserIsPrivate() {
+        return userIsPrivate;
+    }
+
+    public void setUserIsPrivate(boolean userIsPrivate) {
+        this.userIsPrivate = userIsPrivate;
     }
 }

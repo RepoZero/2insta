@@ -1,6 +1,6 @@
 package com.smrahmadi.a2insta.view;
 
-public interface LoginView {
+public interface LoginView extends InternetView {
 
     void loginValidation();
     void loginSuccess();

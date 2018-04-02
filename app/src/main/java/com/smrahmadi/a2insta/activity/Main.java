@@ -49,8 +49,7 @@ public class Main extends AppCompatActivity {
         spaceTabLayout.setTabFourIcon(R.drawable.home);
         spaceTabLayout.setTabFiveIcon(R.drawable.story);
 
-        spaceTabLayout.setButtonColor(getResources().getColor(R.color.colorPrimaryDark));
-
+        spaceTabLayout.setButtonColor(getResources().getColor(R.color.instagram));
 
 
 

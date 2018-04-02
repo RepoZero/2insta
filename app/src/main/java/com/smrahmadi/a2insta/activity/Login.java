@@ -75,4 +75,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener,Log
     public void loginError() {
 
     }
+
+    @Override
+    public void onError(String error) {
+
+    }
+
+    @Override
+    public void onInternetConnectionError() {
+
+    }
 }
