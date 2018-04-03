@@ -12,12 +12,14 @@
         android:id="@+id/user_Posts"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"/>
 
     <com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/user_profile">
+        android:id="@+id/user_profile"
+        android:layout_gravity="center_horizontal|top">
 
         <LinearLayout
             android:layout_height="wrap_content"
@@ -25,12 +27,7 @@
             android:orientation="vertical">
 
         <include layout="@layout/user_profile"/>
-
-
         </LinearLayout>
-
-
-
     </com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader>
 
 

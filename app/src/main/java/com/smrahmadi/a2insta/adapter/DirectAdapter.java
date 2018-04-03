@@ -1,7 +1,6 @@
 package com.smrahmadi.a2insta.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.smrahmadi.a2insta.R;
 import com.smrahmadi.a2insta.object.Person;
-import com.smrahmadi.a2insta.utils.XBitmapFactory;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

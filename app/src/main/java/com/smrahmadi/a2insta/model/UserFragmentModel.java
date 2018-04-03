@@ -2,21 +2,15 @@ package com.smrahmadi.a2insta.model;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import com.smrahmadi.a2insta.adapter.UserAdapter;
 import com.smrahmadi.a2insta.object.Content;
 import com.smrahmadi.a2insta.object.Post;
 import com.smrahmadi.a2insta.object.User;
 import com.smrahmadi.a2insta.presenter.UserFragmentPresenter;
-import com.smrahmadi.a2insta.utils.XBitmapFactory;
 import com.smrahmadi.a2insta.view.UserFragmentView;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 import java.util.HashMap;

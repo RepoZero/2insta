@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bartoszlipinski.recyclerviewheader2.RecyclerViewHeader;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.smrahmadi.a2insta.R;
 import com.smrahmadi.a2insta.model.UserFragmentModel;
 import com.smrahmadi.a2insta.object.User;
@@ -30,7 +32,7 @@ import jp.wasabeef.picasso.transformations.BlurTransformation;
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 
-public class UserFragment extends Fragment implements UserFragmentView {
+public class UserFragment extends Fragment implements View.OnClickListener,UserFragmentView {
 
 
 
@@ -48,7 +50,7 @@ public class UserFragment extends Fragment implements UserFragmentView {
 
     @BindView(R.id.profile_bookmarks) protected ImageView bookmarks;
     @BindView(R.id.profile_extensions) protected ImageView extensions;
-    @BindView(R.id.profile_addPost) protected ImageView posts;
+    @BindView(R.id.profile_addPost) protected ImageView addPost;
 
 
     @BindView(R.id.user_profile) protected RecyclerViewHeader userProfile ;
@@ -68,6 +70,9 @@ public class UserFragment extends Fragment implements UserFragmentView {
         initView(view);
 
 
+
+
+
         return view;
     }
 
@@ -80,6 +85,18 @@ public class UserFragment extends Fragment implements UserFragmentView {
 
 
         userProfile.attachTo(userPosts);
+
+
+        profileImage.setOnClickListener(this);
+        txtName.setOnClickListener(this);
+        txtBio.setOnClickListener(this);
+        edit.setOnClickListener(this);
+        txtPosts.setOnClickListener(this);
+        txtFollowers.setOnClickListener(this);
+        txtFollowing.setOnClickListener(this);
+        bookmarks.setOnClickListener(this);
+        extensions.setOnClickListener(this);
+        addPost.setOnClickListener(this);
     }
 
 
@@ -121,6 +138,13 @@ public class UserFragment extends Fragment implements UserFragmentView {
 
     @Override
     public void onInternetConnectionError() {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        YoYo.with(Techniques.Pulse).duration(500).playOn(v) ;
 
     }
 }
