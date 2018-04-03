@@ -6,7 +6,7 @@ import com.smrahmadi.a2insta.object.User;
 
 public interface UserFragmentView  extends InternetView {
 
-    void onGetProfileData(User user , Bitmap blurBackground);
+    void onGetProfileData(User user);
     void onPostSuccessGetData();
 
 

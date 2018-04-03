@@ -22,9 +22,12 @@ import com.smrahmadi.a2insta.model.UserFragmentModel;
 import com.smrahmadi.a2insta.object.User;
 import com.smrahmadi.a2insta.presenter.UserFragmentPresenter;
 import com.smrahmadi.a2insta.view.UserFragmentView;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.picasso.transformations.BlurTransformation;
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 
 public class UserFragment extends Fragment implements UserFragmentView {
@@ -75,18 +78,28 @@ public class UserFragment extends Fragment implements UserFragmentView {
         mUserFragmentModel.setDataRecycler(userPosts);
 
 
+
         userProfile.attachTo(userPosts);
     }
 
 
     @SuppressLint("SetTextI18n")
     @Override
-    public void onGetProfileData(User user, Bitmap blurBackground) {
+    public void onGetProfileData(User user) {
 
 
 
-        profileBackground.setImageBitmap(blurBackground);
-        profileImage.setImageBitmap(user.getProfileImage());
+
+        Picasso.get().load(user.getProfileImage())
+                .transform(new BlurTransformation(getContext(),25,1))
+                .into(profileBackground);
+
+
+        Picasso.get().load(user.getProfileImage())
+                .transform(new CropCircleTransformation())
+                .into(profileImage);
+
+
 
         txtName.setText(user.getName());
         txtBio.setText(user.getBio());

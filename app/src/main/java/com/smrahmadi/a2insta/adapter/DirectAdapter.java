@@ -11,9 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.smrahmadi.a2insta.R;
 import com.smrahmadi.a2insta.object.Person;
-import com.smrahmadi.a2insta.utils.BitmapFactory;
+import com.smrahmadi.a2insta.utils.XBitmapFactory;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 
 public class DirectAdapter extends RecyclerView.Adapter<DirectAdapter.ViewHolder> {
 
@@ -53,11 +56,14 @@ public class DirectAdapter extends RecyclerView.Adapter<DirectAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Bitmap profile = BitmapFactory.Cropped(person.get(position).getProfileImage());
+
         String namePerson = person.get(position).getName() ;
 
 
-        holder.image.setImageBitmap(profile);
+
+        Picasso.get().load(person.get(position).getProfileImage())
+                .transform(new CropCircleTransformation())
+                .into(holder.image);
 
         holder.name.setText(namePerson);
 

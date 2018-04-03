@@ -32,74 +32,23 @@ public class DirectFragmentModel implements DirectFragmentPresenter {
 
 
 
+        Person person = new Person("smr_amd" , "Mohammad Reza","https://scontent-frt3-2.cdninstagram.com/vp/98d9ee9bde6ca3d0b9dae028b089612c/5B396830/t51.2885-19/s150x150/14156145_1612323229060517_462362610_a.jpg");
+        people.add(person);
 
 
 
-        Picasso.get().load("https://scontent-frt3-2.cdninstagram.com/vp/98d9ee9bde6ca3d0b9dae028b089612c/5B396830/t51.2885-19/s150x150/14156145_1612323229060517_462362610_a.jpg").into(new Target() {
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
 
-
-                Person person = new Person("smr_amd" , "Mohammad Reza",bitmap);
-                people.add(person);
-
-            }
-
-            @Override
-            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-
-            }
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-            }
-        });
-
-
-        Picasso.get().load("https://scontent-frt3-2.cdninstagram.com/vp/d270c1f6ff89a04fff8d4d79e238c7ae/5B575DCF/t51.2885-19/s150x150/17439079_430068337335946_8126556720827727872_a.jpg").into(new Target() {
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-
-
-                Person person = new Person("smr_amd" , "Mohammad Reza",bitmap);
-                people.add(person);
-
-            }
-
-            @Override
-            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-
-            }
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-            }
-        });
+        person = new Person("smr_amd" , "Mohammad Reza","https://scontent-frt3-2.cdninstagram.com/vp/d270c1f6ff89a04fff8d4d79e238c7ae/5B575DCF/t51.2885-19/s150x150/17439079_430068337335946_8126556720827727872_a.jpg");
+        people.add(person);
 
 
 
-        Picasso.get().load("https://scontent-frt3-2.cdninstagram.com/vp/3a9e4937fef05497ec0df3220ac98584/5B590667/t51.2885-19/s150x150/26869925_464924967237716_4779614609726242816_n.jpg").into(new Target() {
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+
+         person = new Person("smr_amd" , "Mohammad Reza","https://scontent-frt3-2.cdninstagram.com/vp/3a9e4937fef05497ec0df3220ac98584/5B590667/t51.2885-19/s150x150/26869925_464924967237716_4779614609726242816_n.jpg");
+        people.add(person);
 
 
-                Person person = new Person("smr_amd" , "Mohammad Reza",bitmap);
-                people.add(person);
 
-            }
-
-            @Override
-            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-
-            }
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-            }
-        });
 
 
         DirectAdapter adapter = new DirectAdapter(context,people);

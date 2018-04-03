@@ -11,13 +11,13 @@ public class Person  {
     private String userId ;
     private String name ;
     private String bio ;
-    private Bitmap profileImage;
+    private String profileImage;
     private double followersCount;
     private double followingCount;
     private int postCount;
     private boolean userIsPrivate ;
 
-    public Person(String userId, String name, String bio, Bitmap profileImage, double followersCount, double followingCount, int postCount, boolean userIsPrivate) {
+    public Person(String userId, String name, String bio, String profileImage, double followersCount, double followingCount, int postCount, boolean userIsPrivate) {
         this.userId = userId;
         this.name = name;
         this.bio = bio;
@@ -30,7 +30,7 @@ public class Person  {
 
 
 
-    public Person(String userId, String name , Bitmap profileImage) {
+    public Person(String userId, String name , String profileImage) {
         this.userId = userId;
         this.name = name;
         this.profileImage=profileImage ;
@@ -61,11 +61,11 @@ public class Person  {
         this.bio = bio;
     }
 
-    public Bitmap getProfileImage() {
+    public String getProfileImage() {
         return profileImage;
     }
 
-    public void setProfileImage(Bitmap profileImage) {
+    public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
     }
 

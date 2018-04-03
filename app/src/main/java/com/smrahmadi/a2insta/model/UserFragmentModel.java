@@ -6,14 +6,17 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
+
 import com.smrahmadi.a2insta.adapter.UserAdapter;
 import com.smrahmadi.a2insta.object.Content;
 import com.smrahmadi.a2insta.object.Post;
 import com.smrahmadi.a2insta.object.User;
 import com.smrahmadi.a2insta.presenter.UserFragmentPresenter;
-import com.smrahmadi.a2insta.utils.BitmapFactory;
+import com.smrahmadi.a2insta.utils.XBitmapFactory;
 import com.smrahmadi.a2insta.view.UserFragmentView;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -129,29 +132,10 @@ public class UserFragmentModel implements UserFragmentPresenter {
 
 
 
-        Picasso.get().load("https://scontent-frx5-1.cdninstagram.com/vp/e6c42f958aa4aef03b57e979159cc896/5B6C7A1A/t51.2885-19/s150x150/27878282_218892278658420_7118024766807605248_n.jpg").into(new com.squareup.picasso.Target() {
-            @Override
-            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+        User user = new User("smr_amd","Mohammad Reza","<Programmer/>","https://scontent-frx5-1.cdninstagram.com/vp/e6c42f958aa4aef03b57e979159cc896/5B6C7A1A/t51.2885-19/s150x150/27878282_218892278658420_7118024766807605248_n.jpg",
+                999,15,10);
 
-                Bitmap blurBackground = BitmapFactory.blur(context,bitmap) ;
-                Bitmap circleProfile = BitmapFactory.Cropped(bitmap) ;
-
-                User user = new User("smr_amd","Mohammad Reza","<Programmer/>",circleProfile,
-                        999,15,10);
-
-                mUserFragmentView.onGetProfileData(user,blurBackground);
-            }
-
-            @Override
-            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
-
-            }
-
-            @Override
-            public void onPrepareLoad(Drawable placeHolderDrawable) {
-
-            }
-        });
+        mUserFragmentView.onGetProfileData(user);
 
 
 
