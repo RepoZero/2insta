@@ -10,4 +10,6 @@
     <color name="textColor">#212121</color>
 
     <color name="instagram">#e4405f</color>
+
+    <color name="red">#f44336</color>
 </resources>
