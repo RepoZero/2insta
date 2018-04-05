@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.smrahmadi.a2insta.R;
 import com.smrahmadi.a2insta.object.Post;
 import com.smrahmadi.a2insta.xView.SquareImageView;
@@ -46,7 +48,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
         Post post = posts.get(position);
 
@@ -57,6 +59,26 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }
 
         Picasso.get().load(imageUrl).into(holder.xImage);
+
+        holder.xImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.Tada).duration(500).playOn(holder.xImage);
+            }
+        });
+
+
+        holder.xImage.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                YoYo.with(Techniques.Wave).duration(500).playOn(holder.xImage);
+                return false;
+
+            }
+        });
+
+
+
 
 
     }
